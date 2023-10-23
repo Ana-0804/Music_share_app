@@ -96,7 +96,5 @@ def home(request):
     allowed_music_files = MusicFile.objects.filter(type=MusicFile.PUBLIC) | request.user.allowed_music_files.all()
     return render(request, 'home.html', {'music_files': music_files, 'allowed_music_files': allowed_music_files})
 
-def logout_view(request):
-    logout(request)
-    return redirect('login')
+
 
